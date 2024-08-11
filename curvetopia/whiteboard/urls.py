@@ -1,11 +1,7 @@
 # whiteboard/urls.py
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import PolylineViewSet
-
-router = DefaultRouter()
-router.register(r'polylines', PolylineViewSet)
+from django.urls import path
+from .views import process_drawing
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('process-drawing/', process_drawing, name='process_drawing'),
 ]
